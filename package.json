@@ -1,0 +1,37 @@
+{
+  "name": "tmdb.js",
+  "version": "0.1.0",
+  "description": "The Movie Database, TMDB",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "qs": "^6.5.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^21.1.8",
+    "@types/nock": "^9.1.0",
+    "@types/qs": "^6.5.1",
+    "jest": "^22.0.3",
+    "nock": "^9.1.5",
+    "ts-jest": "^22.0.0",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.2"
+  },
+  "scripts": {
+    "test": "yarn test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blinkcat/tmdb.js.git"
+  },
+  "keywords": [
+    "TMDB",
+    "tmdb"
+  ],
+  "author": "blinkcat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blinkcat/tmdb.js/issues"
+  },
+  "homepage": "https://github.com/blinkcat/tmdb.js#readme"
+}
