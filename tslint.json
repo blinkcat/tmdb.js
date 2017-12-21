@@ -12,7 +12,9 @@
           "objects": "never"
         }
       }
-    ]
+    ],
+    "object-literal-sort-keys": false,
+    "no-trailing-whitespace": [true, "ignore-comments"]
   },
   "rulesDirectory": []
 }
