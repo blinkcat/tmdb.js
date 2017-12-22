@@ -5,10 +5,16 @@
   "main": "index.js",
   "dependencies": {
     "axios": "^0.17.1",
+    "lodash.intersection": "^4.4.0",
+    "lodash.isnumber": "^3.0.3",
+    "lodash.keys": "^4.2.0",
     "qs": "^6.5.1"
   },
   "devDependencies": {
     "@types/jest": "^21.1.8",
+    "@types/lodash.intersection": "^4.4.3",
+    "@types/lodash.isnumber": "^3.0.3",
+    "@types/lodash.keys": "^4.2.3",
     "@types/nock": "^9.1.0",
     "@types/qs": "^6.5.1",
     "jest": "^22.0.3",
@@ -18,16 +24,13 @@
     "typescript": "^2.6.2"
   },
   "scripts": {
-    "test": "yarn test"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/blinkcat/tmdb.js.git"
   },
-  "keywords": [
-    "TMDB",
-    "tmdb"
-  ],
+  "keywords": ["TMDB", "tmdb"],
   "author": "blinkcat",
   "license": "MIT",
   "bugs": {

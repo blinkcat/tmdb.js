@@ -4,7 +4,6 @@
   "jsRules": {},
   "rules": {
     "quotemark": [true, "single", "jsx-double", "avoid-escape"],
-    "member-ordering": false,
     "trailing-comma": [
       true,
       {
@@ -14,7 +13,9 @@
       }
     ],
     "object-literal-sort-keys": false,
-    "no-trailing-whitespace": [true, "ignore-comments"]
+    "no-trailing-whitespace": [true, "ignore-comments"],
+    "no-unused-variable": true,
+    "arrow-parens": [true, "ban-single-arg-parens"]
   },
   "rulesDirectory": []
 }

@@ -3,7 +3,7 @@ import qs from 'qs';
 import config from './config';
 import { httpMethod, IanyObj } from './types';
 
-const postOrDeleteDefaultContentType = 'application/json;charset=utf-8';
+export const postOrDeleteDefaultContentType = 'application/json;charset=utf-8';
 const request = axios.create({
   baseURL: config.base_url
 });
@@ -19,7 +19,9 @@ export default function commonRequest(type: httpMethod, apiPath: string, query?:
     return request.post(finalApiPath, body);
   } else if (type === 'delete') {
     return request.delete(finalApiPath);
-  } else {
+  } else if (type === 'get') {
     return request.get(finalApiPath);
+  } else {
+    throw Error(`don't support http method ${type}`);
   }
 }

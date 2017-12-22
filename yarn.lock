@@ -14,6 +14,28 @@
   version "21.1.9"
   resolved "http://registry.npm.taobao.org/@types/jest/download/@types/jest-21.1.9.tgz#a913d6224e9d8a1f24908af536f65b5bf4d489bc"
 
+"@types/lodash.intersection@^4.4.3":
+  version "4.4.3"
+  resolved "http://registry.npm.taobao.org/@types/lodash.intersection/download/@types/lodash.intersection-4.4.3.tgz#04ee42b95cc9c7bee62ef8ca39041070161e3311"
+  dependencies:
+    "@types/lodash" "*"
+
+"@types/lodash.isnumber@^3.0.3":
+  version "3.0.3"
+  resolved "http://registry.npm.taobao.org/@types/lodash.isnumber/download/@types/lodash.isnumber-3.0.3.tgz#86c37551c1762af42eba550f0917f9cda935b0a7"
+  dependencies:
+    "@types/lodash" "*"
+
+"@types/lodash.keys@^4.2.3":
+  version "4.2.3"
+  resolved "http://registry.npm.taobao.org/@types/lodash.keys/download/@types/lodash.keys-4.2.3.tgz#961520ed62b8010e9de6185296a42ba6584fc2b6"
+  dependencies:
+    "@types/lodash" "*"
+
+"@types/lodash@*":
+  version "4.14.91"
+  resolved "http://registry.npm.taobao.org/@types/lodash/download/@types/lodash-4.14.91.tgz#794611b28056d16b5436059c6d800b39d573cd3a"
+
 "@types/nock@^9.1.0":
   version "9.1.0"
   resolved "http://registry.npm.taobao.org/@types/nock/download/@types/nock-9.1.0.tgz#f2f0b1da56507cb469fa08225ee78f5453b910d6"
@@ -1781,6 +1803,18 @@ locate-path@^2.0.0:
   dependencies:
     p-locate "^2.0.0"
     path-exists "^3.0.0"
+
+lodash.intersection@^4.4.0:
+  version "4.4.0"
+  resolved "http://registry.npm.taobao.org/lodash.intersection/download/lodash.intersection-4.4.0.tgz#0a11ba631d0e95c23c7f2f4cbb9a692ed178e705"
+
+lodash.isnumber@^3.0.3:
+  version "3.0.3"
+  resolved "http://registry.npm.taobao.org/lodash.isnumber/download/lodash.isnumber-3.0.3.tgz#3ce76810c5928d03352301ac287317f11c0b1ffc"
+
+lodash.keys@^4.2.0:
+  version "4.2.0"
+  resolved "http://registry.npm.taobao.org/lodash.keys/download/lodash.keys-4.2.0.tgz#a08602ac12e4fb83f91fc1fb7a360a4d9ba35205"
 
 lodash.sortby@^4.7.0:
   version "4.7.0"
