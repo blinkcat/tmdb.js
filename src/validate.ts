@@ -12,11 +12,13 @@ export function validateId(id: number) {
 export function validateObj(params: object, requiredKeys: string[]) {
   if (requiredKeys.length !== 0) {
     const keyIntersection = intersection(keys(params), requiredKeys);
-    if (requiredKeys.length === 1 && keyIntersection.length === 0) {
-      throw Error(`Missing required field: ${requiredKeys[0]}`);
-    } else if (keyIntersection.length === 0) {
-      throw Error(`Missing one of: ${requiredKeys.join(', ')}`);
+    if (keyIntersection.length !== requiredKeys.length) {
+      if (requiredKeys.length === 1 && keyIntersection.length === 0) {
+        throw Error(`Missing required field: ${requiredKeys[0]}`);
+      } else if (keyIntersection.length < requiredKeys.length) {
+        throw Error(`Missing one of: ${requiredKeys.join(', ')}`);
+      }
     }
-    return true;
   }
+  return true;
 }

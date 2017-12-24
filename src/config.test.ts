@@ -1,4 +1,4 @@
-import config from '../src/config';
+import config from './config';
 
 describe('api config', () => {
   it('is an object', () => {

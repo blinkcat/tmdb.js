@@ -1,6 +1,14 @@
 export { default as account } from './account';
+export { default as authentication } from './authentication';
 export { default as certifications } from './certifications';
 export { default as changes } from './changes';
+export { default as collections } from './collections';
 export { default as company } from './company';
+export { default as credits } from './credits';
+export { default as genres } from './genres';
+export { default as guestSessions } from './guestSessions';
+export { default as keywords } from './keywords';
 export { default as discover } from './discover';
 export { default as movies } from './movies';
+export { default as people } from './people';
+export { default as search } from './search';

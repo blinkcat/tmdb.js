@@ -1,6 +1,6 @@
 import nock from 'nock';
-import config from '../src/config';
-import request, { postOrDeleteDefaultContentType } from '../src/request';
+import config from './config';
+import request, { postOrDeleteDefaultContentType } from './request';
 
 const apiPath = '/test';
 const successResponse = { status: 'ok', data: { a: 1 } };

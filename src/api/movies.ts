@@ -1,4 +1,5 @@
 import request from '../request';
+import { ImoiveQuery, ImovieRegionQuery } from '../types';
 import { validateObj } from '../validate';
 
 const movies = {
@@ -115,10 +116,10 @@ const movies = {
    * Get a list of recommended movies for a movie.
    *
    * @param {number} movieId
-   * @param {{ language?: string; page?: number }} [query]
+   * @param {ImoiveQuery} [query]
    * @returns {AxiosPromise<any>}
    */
-  recommendations(movieId: number, query?: { language?: string; page?: number }) {
+  recommendations(movieId: number, query?: ImoiveQuery) {
     return request('get', `/movie/${movieId}/recommendations`, query);
   },
   /**
@@ -126,30 +127,30 @@ const movies = {
    * These items are assembled by looking at keywords and genres.
    *
    * @param {number} movieId
-   * @param {{ language?: string; page?: number }} [query]
+   * @param {ImoiveQuery} [query]
    * @returns {AxiosPromise<any>}
    */
-  similar(movieId: number, query?: { language?: string; page?: number }) {
+  similar(movieId: number, query?: ImoiveQuery) {
     return request('get', `/movie/${movieId}/similar`);
   },
   /**
    * Get the user reviews for a movie.
    *
    * @param {number} movieId
-   * @param {{ language?: string; page?: number }} [query]
+   * @param {ImoiveQuery} [query]
    * @returns {AxiosPromise<any>}
    */
-  reviews(movieId: number, query?: { language?: string; page?: number }) {
+  reviews(movieId: number, query?: ImoiveQuery) {
     return request('get', `/movie/${movieId}/reviews`);
   },
   /**
    * Get a list of lists that this movie belongs to.
    *
    * @param {number} movieId
-   * @param {{ language?: string; page?: number }} [query]
+   * @param {ImoiveQuery} [query]
    * @returns {AxiosPromise<any>}
    */
-  lists(movieId: number, query?: { language?: string; page?: number }) {
+  lists(movieId: number, query?: ImoiveQuery) {
     return request('get', `/movie/${movieId}/lists`);
   },
   /**
@@ -161,7 +162,11 @@ const movies = {
    * @param {{ value: number }} body
    * @returns {AxiosPromise<any>}
    */
-  rate(movieId: number, query: { guest_session_id?: string; session_id?: string }, body: { value: number }) {
+  rate(
+    movieId: number,
+    query: { guest_session_id?: string; session_id?: string },
+    body: { value: number }
+  ) {
     validateObj(body, ['value']);
     return request('post', `/movie/${movieId}/rating`, query, body);
   },
@@ -192,28 +197,28 @@ const movies = {
    * You can optionally specify a region prameter
    * which will narrow the search to only look for theatrical release dates within the specified country.
    *
-   * @param {{ language?: string; page?: number; region?: string }} [query]
+   * @param {ImovieRegionQuery} [query]
    * @returns
    */
-  nowPlaying(query?: { language?: string; page?: number; region?: string }) {
+  nowPlaying(query?: ImovieRegionQuery) {
     return request('get', '/movie/now_playing', query);
   },
   /**
    * Get a list of the current popular movies on TMDb. This list updates daily.
    *
-   * @param {{ language?: string; page?: number; region?: string }} [query]
+   * @param {ImovieRegionQuery} [query]
    * @returns
    */
-  popular(query?: { language?: string; page?: number; region?: string }) {
+  popular(query?: ImovieRegionQuery) {
     return request('get', '/movie/popular', query);
   },
   /**
    * Get the top rated movies on TMDb.
    *
-   * @param {{ language?: string; page?: number; region?: string }} [query]
+   * @param {ImovieRegionQuery} [query]
    * @returns
    */
-  topRated(query?: { language?: string; page?: number; region?: string }) {
+  topRated(query?: ImovieRegionQuery) {
     return request('get', '/movie/top_rated', query);
   },
   /**
@@ -223,10 +228,10 @@ const movies = {
    * You can optionally specify a region prameter which will narrow the search to only look for
    * theatrical release dates within the specified country.
    *
-   * @param {{ language?: string; page?: number; region?: string }} [query]
+   * @param {ImovieRegionQuery} [query]
    * @returns
    */
-  upcoming(query?: { language?: string; page?: number; region?: string }) {
+  upcoming(query?: ImovieRegionQuery) {
     return request(`get`, '/movie/upcoming', query);
   }
 };

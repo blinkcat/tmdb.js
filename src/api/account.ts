@@ -21,7 +21,7 @@ const account = {
    * @param {{ language?: string; session_id: string; page?: number }} query
    * @returns {AxiosPromise<any>}
    */
-  lists(accountId: number, query: { language?: string; session_id: string; page?: number }) {
+  createdLists(accountId: number, query: { language?: string; session_id: string; page?: number }) {
     validateObj(query, ['session_id']);
     return request('get', `/account/${accountId}/lists`, query);
   },
@@ -125,7 +125,7 @@ const account = {
    */
   addToWatchlist(accountId: number, query: { session_id: string }, body: IaccountWatchlistBody) {
     validateObj(query, ['session_id']);
-    validateObj(query, ['media_type', 'media_id', 'watchlist']);
+    validateObj(body, ['media_type', 'media_id', 'watchlist']);
     return request('post', `/account/${accountId}/watchlist`, query, body);
   }
 };

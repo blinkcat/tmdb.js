@@ -30,3 +30,5 @@ const changes = {
     return request('get', '/person/changes');
   }
 };
+
+export default changes;

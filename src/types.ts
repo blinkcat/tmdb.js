@@ -23,15 +23,16 @@ export interface IaccountQuery {
 
 type accountMediaType = 'movie' | 'tv';
 
-export interface IaccountFavoriteBody {
+interface IaccountBody {
   media_type: accountMediaType;
   media_id: number;
+}
+
+export interface IaccountFavoriteBody extends IaccountBody {
   favorite: boolean;
 }
 
-export interface IaccountWatchlistBody {
-  media_type: accountMediaType;
-  media_id: number;
+export interface IaccountWatchlistBody extends IaccountBody {
   watchlist: boolean;
 }
 
@@ -115,3 +116,19 @@ export interface IdiscoverTV {
   without_keywords: string;
   screened_theatrically: boolean;
 }
+
+// find
+export type externalSource = 'imdb_id' | 'freebase_mid' | 'freebase_id' | 'tvdb_id' | 'tvrage_id';
+
+// movie
+export interface ImoiveQuery {
+  language?: string;
+  page?: number;
+}
+
+export interface ImovieRegionQuery extends ImoiveQuery {
+  region?: string;
+}
+
+// Guest Sessions
+export type guestSessionsSortBy = 'created_at.asc' | 'created_at.desc';
