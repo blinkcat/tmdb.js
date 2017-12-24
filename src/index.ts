@@ -2,16 +2,23 @@ import {
   account,
   certifications,
   changes,
-  collections,
+  collection,
   company,
   credits,
   discover,
   genres,
-  guestSessions,
-  keywords,
-  movies,
+  guestSession,
+  keyword,
+  list,
+  movie,
+  network,
   people,
-  search
+  review,
+  search,
+  timezones,
+  tv,
+  tVEpisodes,
+  tVSeasons
 } from './api';
 import request from './request';
 import { externalSource } from './types';
@@ -20,7 +27,7 @@ const TMDB = {
   account,
   certifications,
   changes,
-  collections,
+  collection,
   company,
   /**
    * Get the system wide configuration information.
@@ -46,7 +53,7 @@ const TMDB = {
     return request('get', `/find/${externalId}`, query);
   },
   genres,
-  guestSessions,
+  guestSession,
   /**
    * The the list of official jobs that are used on TMDb.
    *
@@ -55,32 +62,17 @@ const TMDB = {
   jobs() {
     return request('get', '/job/list');
   },
-  keywords,
-  movies,
-  networks: {
-    /**
-     * Get the details of a network.
-     *
-     * @param {number} networkId
-     * @returns {AxiosPromise<any>}
-     */
-    details(networkId: number) {
-      return request('get', `/network/${networkId}`);
-    }
-  },
+  keyword,
+  list,
+  movie,
+  network,
   people,
-  reviews: {
-    /**
-     * Get Details
-     *
-     * @param {string} reviewId
-     * @returns {AxiosPromise<any>}
-     */
-    details(reviewId: string) {
-      return request('get', `/review/${reviewId}`);
-    }
-  },
-  search
+  review,
+  search,
+  timezones,
+  tv,
+  tVEpisodes,
+  tVSeasons
 };
 
 export default TMDB;

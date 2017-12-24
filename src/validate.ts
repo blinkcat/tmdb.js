@@ -2,12 +2,12 @@ import intersection from 'lodash.intersection';
 import isNumber from 'lodash.isnumber';
 import keys from 'lodash.keys';
 
-export function validateId(id: number) {
-  if (!isNumber(id)) {
-    throw Error('id must be a number');
-  }
-  return true;
-}
+// export function validateId(id: number) {
+//   if (!isNumber(id)) {
+//     throw Error('id must be a number');
+//   }
+//   return true;
+// }
 
 export function validateObj(params: object, requiredKeys: string[]) {
   if (requiredKeys.length !== 0) {

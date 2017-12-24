@@ -1,15 +1,26 @@
+import { throwStringFieldError } from '../error';
 import request from '../request';
 
-const credits = {
-  /**
-   * Get a movie or TV credit details by id.
-   *
-   * @param {string} creditId
-   * @returns {AxiosPromise<any>}
-   */
-  details(creditId: string) {
-    return request('get', `/credit/${creditId}`);
+/**
+ * Credits
+ *
+ * @export
+ * @param {string} creditId
+ * @returns
+ */
+export default function credit(creditId: string) {
+  if (typeof creditId === 'string') {
+    return {
+      /**
+       * Get a movie or TV credit details by id.
+       *
+       * @returns {AxiosPromise<any>}
+       */
+      details() {
+        return request('get', `/credit/${creditId}`);
+      }
+    };
+  } else {
+    throwStringFieldError('creditId');
   }
-};
-
-export default credits;
+}

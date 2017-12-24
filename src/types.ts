@@ -131,4 +131,9 @@ export interface ImovieRegionQuery extends ImoiveQuery {
 }
 
 // Guest Sessions
-export type guestSessionsSortBy = 'created_at.asc' | 'created_at.desc';
+type guestSessionsSortBy = 'created_at.asc' | 'created_at.desc';
+
+export interface IguestSessionQuery {
+  language?: string;
+  sort_by?: guestSessionsSortBy;
+}
